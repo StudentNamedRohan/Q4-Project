@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <title>Q4 | Project</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <style>
+        .container {
+          max-width: 500px;
+          margin: 0 auto;
+          padding: 20px;
+        }
+      </style>
+      <script src="converter.js"></script>
+  </head>
+  <body>
+  <div class="container">
+    <h2>Length Conversion Calculator</h2>
+    <div class="form-group">
+      <label for="inputMillimeter">Enter length in millimeters:</label>
+      <input type="text" class="form-control" id="inputMillimeter">
+    </div>
+    <button type="button" class="btn btn-primary" onclick="convert()">Convert</button>
+    <div class="form-group">
+      <label for="outputCentimeter">Length in centimeters:</label>
+      <input type="text" class="form-control" id="outputCentimeter" readonly>
+    </div>
+    <div class="form-group">
+      <label for="outputMeter">Length in meters:</label>
+      <input type="text" class="form-control" id="outputMeter" readonly>
+    </div>
+    <div class="form-group">
+      <label for="outputKilometer">Length in kilometers:</label>
+      <input type="text" class="form-control" id="outputKilometer" readonly>
+    </div>
+
+  </div>
+  <script>
+    function convert() {
+  var inputMillimeter = document.getElementById("inputMillimeter").value;
+  var centimeter = inputMillimeter / 10;
+  var meter = inputMillimeter / 1000;
+  var kilometer = inputMillimeter / 1000000;
+  document.getElementById("outputCentimeter").value = centimeter.toFixed(2);
+  document.getElementById("outputMeter").value = meter.toFixed(4);
+  document.getElementById("outputKilometer").value = kilometer.toFixed(6);
+}
+</script>
+</body>
+</html>
